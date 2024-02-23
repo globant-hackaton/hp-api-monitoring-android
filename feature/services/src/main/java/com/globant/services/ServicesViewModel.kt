@@ -12,7 +12,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.util.Timer
 import javax.inject.Inject
+import kotlin.concurrent.schedule
 
 
 @Immutable
@@ -36,10 +38,12 @@ class ServicesViewModel @Inject constructor(
     val uiState: StateFlow<UiState> = _uiState
 
     init {
-        fetchServiceStatus()
+        Timer().schedule(delay = 0, period = 30000) {
+            fetchServiceStatus()
+        }
     }
 
-    fun fetchServiceStatus() {
+    private fun fetchServiceStatus() {
         getAllCharacters()
         getAllStudents()
         getSpells()

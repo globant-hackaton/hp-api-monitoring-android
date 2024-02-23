@@ -59,7 +59,7 @@ class HarryPotterRepositoryImpl @Inject constructor(
             response.body() ?: emptyList(),
             Service(
                 code = response.code(),
-                name = "Students  by House: $house",
+                name = "By House: $house",
             )
         )
 
