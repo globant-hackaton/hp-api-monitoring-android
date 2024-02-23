@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="active_status">Active</string>
+    <string name="inactive_status">Inactivo</string>
+</resources>
